@@ -1,5 +1,6 @@
 # Managing Permissions with the Principle of Least Privilege
 Note: This configuration was documented rather than executed due to the lab environment not running a Windows Server domain controller.
+
 ## Overview
 
 This exercise demonstrates how to implement the Principle of Least Privilege in a Windows Server environment using Active Directory, security groups, and file system permissions.
