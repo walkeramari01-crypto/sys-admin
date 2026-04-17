@@ -46,3 +46,15 @@ A boutique architecture firm has 500GB of project files stored on a NAS. They ba
 This command copies all data from the NAS to the backup drive to create a local backup. 
 ```bash
 rsync -av --delete /Volumes/NAS/ /Volumes/BackupDrive/
+
+
+---
+
+## 5. Backup Script Usage
+
+### Description
+This script creates a compressed backup of a specified source directory and stores it in a destination directory. It also removes backups older than 7 days.
+
+### Command
+```bash
+./backup_manager.sh --src <source_directory> --des <destination_directory>
