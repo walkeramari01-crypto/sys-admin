@@ -7,8 +7,21 @@ set -euo pipefail
 
 # ===== Variables =====
 # Define source and destination directories for backup
-SOURCE_DIR="$(pwd)/source_data"
-DEST_DIR="$(pwd)/backups"
+# Parse command line arguments
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    --src) SOURCE_DIR="$2"; shift ;;
+    --des) DEST_DIR="$2"; shift ;;
+    *) echo "Unknown parameter: $1"; exit 1 ;;
+  esac
+  shift
+done
+
+# Validate inputs
+if [[ -z "${SOURCE_DIR:-}" || -z "${DEST_DIR:-}" ]]; then
+  echo "Usage: ./backup_manager.sh --src <source_dir> --des <dest_dir>"
+  exit 1
+fi
 
 # Define log file and timestamp for naming backups
 LOG_FILE="$DEST_DIR/backup.log"
