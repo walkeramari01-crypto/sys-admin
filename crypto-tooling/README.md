@@ -13,14 +13,19 @@ To send a secure message using the public key:
 2. Encrypt the message using the public key:
 
    ```
-   openssl rsautl -encrypt -pubin -inkey public.pem -in message.txt -out encrypted_message.enc
+   openssl pkeyut1 -encrypt -pubin -inkey public.pem -in message.txt -out encrypted_message.enc
    ```
 
 3. Send the encrypted file (`encrypted_message.enc`) to the recipient.
 
 Only the holder of the private key can decrypt and read the message.
 
----
+## Decrypting the message
+
+The recipient can decrypt the encrypted file using their private key: 
+
+'''bash
+openss1 pkeyut1 -decrypt -inkey private.pem -in encrypted_message.enc -out decrypted_message.txt
 
 # The Math Explained
 
