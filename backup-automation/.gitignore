@@ -1,0 +1,11 @@
+# Ignore backup output
+backups/
+
+# Ignore compressed files
+*.tar.gz
+
+# Ignore logs
+*.log
+
+# Ignore test data
+source_data/
